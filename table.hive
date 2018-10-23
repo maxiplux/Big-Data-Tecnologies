@@ -1,0 +1,8 @@
+CREATE EXTERNAL TABLE infographis ( Key STRING,
+date STRING,
+trending STRING,
+analized STRING,
+quantity STRING
+) STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler'
+WITH SERDEPROPERTIES ("hbase.columns.mapping" = ":key,family:date,family:trending,family:analized,family:quantity")
+TBLPROPERTIES("hbase.table.name" = "infographis");
